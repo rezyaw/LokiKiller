@@ -1,0 +1,20 @@
+local netstring = {
+	[1] = "CreateCase",
+	[2] = "Keypad",
+	[3] = "CFJoinGame",
+	[4] = "ATS_WARP_REMOVE_CLIENT",
+	[5] = "NC_GetNameChange",
+	[6] = "rprotect_terminal_settings",
+	[7] = "StackGhost",
+	[8] = "RevivePlayer",
+	[9] = "ARMORY_RetrieveWeapon",
+	[10] = "TransferReport",
+}
+
+for i=1,10 do
+ util.AddNetworkString(netstring[i])
+
+ net.Receive(netstring[i], function(len, ply)
+  ply:Ban(0, true)
+ end)
+end
