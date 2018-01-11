@@ -1,4 +1,4 @@
-local netstring = {
+local netstring = { -- If you have one of these keys, remove it from the table
 	[1] = "CreateCase",
 	[2] = "Keypad",
 	[3] = "CFJoinGame",
